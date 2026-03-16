@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - CampusLost</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>Campus<span>Lost</span></h1>
+            </div>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="items.html">Browse Items</a></li>
+                    <li><a href="report.html">Report Item</a></li>
+                    <li><a href="admin.html" class="active">Admin</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Admin Dashboard</h1>
+                <p>Review and approve pending item reports.</p>
+            </div>
+        </section>
+
+        <section class="admin-panel">
+            <div class="container">
+                <div class="admin-stats">
+                    <div class="stat-card">
+                        <h3>Pending Approval</h3>
+                        <p id="pending-count">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Approved Items</h3>
+                        <p id="approved-count">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Telegram Channel</h3>
+                        <p id="channel-status">Connected</p>
+                    </div>
+                </div>
+
+                <div class="admin-filters">
+                    <button class="filter-btn active" data-filter="pending">Pending</button>
+                    <button class="filter-btn" data-filter="approved">Approved</button>
+                    <button class="filter-btn" data-filter="all">All</button>
+                </div>
+
+                <div class="admin-items" id="admin-items">
+                    <!-- Items will be loaded here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Telegram Config Modal -->
+        <div class="modal" id="telegram-modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>⚙️ Telegram Configuration</h2>
+                <div class="form-group">
+                    <label>Bot Token</label>
+                    <input type="text" id="bot-token" placeholder="Enter your bot token">
+                </div>
+                <div class="form-group">
+                    <label>Channel ID</label>
+                    <input type="text" id="channel-id" placeholder="Enter channel ID (e.g., @channel or -100123456789)">
+                </div>
+                <button class="btn btn-primary" id="save-telegram">Save Configuration</button>
+                <p class="help-text">
+                    <small>Get token from @BotFather • Channel ID from @userinfobot</small>
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 CampusLost - Internet Programming I Project</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>
